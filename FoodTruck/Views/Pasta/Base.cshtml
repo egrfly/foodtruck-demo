@@ -1,0 +1,13 @@
+﻿@model IngredientsBowl;
+
+@{
+    ViewData["Title"] = "Your Pasta";
+}
+
+<div class="text-center">
+    <h1 class="display-5 my-5">You receive some pasta mixed in with the following ingredients:</h1>
+    @foreach (var ingredient in Model.Ingredients)
+    {
+        <p class="lead">@ingredient.GetDescriptor()</p>
+    }
+</div>

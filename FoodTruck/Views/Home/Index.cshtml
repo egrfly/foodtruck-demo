@@ -1,0 +1,29 @@
+﻿@model MenuItems
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 my-5">Welcome to Emily's food truck</h1>
+    <div class="row">
+        <div class="col-sm-6 col-12">
+            <h2 class="display-6">Pasta Menu</h2>
+            @foreach (var menuItem in Model.PastaMenuItems)
+            {
+                <p class="lead">
+                    <a class="link-info" asp-area="" asp-controller="PastaMenu" asp-action="@menuItem.ToLower()Recipe">@menuItem</a>
+                </p>
+            }
+        </div>
+        <div class="col-sm-6 col-12">
+            <h2 class="display-6">Pizza Menu</h2>
+            @foreach (var menuItem in Model.PizzaMenuItems)
+            {
+                <p class="lead">
+                    <a class="link-info" asp-area="" asp-controller="PizzaMenu" asp-action="@menuItem.ToLower()Recipe">@menuItem</a>
+                </p>
+            }
+        </div>
+    </div>
+</div>
